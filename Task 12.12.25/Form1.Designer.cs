@@ -34,6 +34,7 @@
             labelResults = new Label();
             panel1 = new Panel();
             label2 = new Label();
+            btnRunTests = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -44,9 +45,9 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(12, 75);
             label1.Name = "label1";
-            label1.Size = new Size(628, 35);
+            label1.Size = new Size(661, 35);
             label1.TabIndex = 0;
-            label1.Text = "Введите данные, разделенные запятыми или пробел.";
+            label1.Text = "Введите данные, разделенные запятыми или пробелом.";
             // 
             // textBox1
             // 
@@ -94,7 +95,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(900, 60);
+            panel1.Size = new Size(902, 60);
             panel1.TabIndex = 4;
             // 
             // label2
@@ -108,19 +109,35 @@
             label2.TabIndex = 0;
             label2.Text = "калькулятор статистических функций";
             // 
+            // btnRunTests
+            // 
+            btnRunTests.BackColor = Color.FromArgb(51, 51, 76);
+            btnRunTests.FlatAppearance.BorderSize = 0;
+            btnRunTests.FlatStyle = FlatStyle.Flat;
+            btnRunTests.ForeColor = Color.White;
+            btnRunTests.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRunTests.Location = new Point(688, 179);
+            btnRunTests.Name = "btnRunTests";
+            btnRunTests.Size = new Size(200, 60);
+            btnRunTests.TabIndex = 5;
+            btnRunTests.Text = "Запустить тест";
+            btnRunTests.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnRunTests.UseVisualStyleBackColor = false;
+            btnRunTests.Click += btnRunTests_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(31, 31, 31);
-            ClientSize = new Size(900, 676);
+            ClientSize = new Size(902, 673);
+            Controls.Add(btnRunTests);
             Controls.Add(panel1);
             Controls.Add(labelResults);
             Controls.Add(buttonCalculate);
             Controls.Add(textBox1);
             Controls.Add(label1);
             Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
@@ -139,5 +156,6 @@
         private Label labelResults;
         private Panel panel1;
         private Label label2;
+        private Button btnRunTests;
     }
 }

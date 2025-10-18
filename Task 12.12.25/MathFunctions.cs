@@ -13,7 +13,7 @@ namespace Task_12._12._25
             if (numbers == null || numbers.Length < 2)
                 throw new ArgumentException("Необходимо минимум два положительных числа.");
             if (numbers.Any(n => n <= 0))
-                throw new ArgumentException("Отрицательные и нулевые числа запрещены.");
+                throw new ArgumentException("Геометрическое среднее не определяется для отрицательных чисел.N/A (есть <= 0)");
 
             return numbers.Average();
         }

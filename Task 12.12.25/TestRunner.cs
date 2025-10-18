@@ -8,15 +8,20 @@ namespace Task_12._12._25
 {
     internal class TestRunner
     {
+        public static Dictionary<string, double[]> Tests = new Dictionary<string, double[]>
+        {
+            { "Нормальный набор данных", new double[] { 2, 4, 4, 4, 5, 5, 7, 9 } },
+            { "Один элемент", new double[] { 5 } },
+            { "Пустой массив", new double[] { } },
+            { "Отрицательные числа", new double[] { -2, 4, 6 } },
+            { "Точность вычислений", new double[] { 1.5, 2.5, 3.5, 4.5 } }
+        };
+
         public static void RunAll()
         {
             Console.WriteLine("=== Запуск тестов ===");
-
-            RunTest("Нормальный набор данных", new double[] { 2, 4, 4, 4, 5, 5, 7, 9 });
-            RunTest("Один элемент", new double[] { 5 });
-            RunTest("Пустой массив", new double[] { });
-            RunTest("Отрицательные числа", new double[] { -2, 4, 6 });
-            RunTest("Точность вычислений", new double[] { 1.5, 2.5, 3.5, 4.5 });
+            foreach (var test in Tests)
+                RunTest(test.Key, test.Value);
         }
 
         private static void RunTest(string name, double[] data)
@@ -39,8 +44,9 @@ namespace Task_12._12._25
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"  Ошибка: {ex.Message}");
+                Console.WriteLine($"  ❌ Ошибка: {ex.Message}");
             }
         }
     }
+
 }
